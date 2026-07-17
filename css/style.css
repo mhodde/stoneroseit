@@ -1,0 +1,375 @@
+/* ==========================================================
+   StoneRose IT
+   style.css
+
+   Auteur : ChatGPT
+   Versie : 1.0
+
+   Dit bestand bevat uitsluitend de huisstijl.
+   Bootstrap verzorgt de basislayout.
+
+   Inhoud:
+   1. Kleuren
+   2. Algemene instellingen
+   3. Typografie
+   4. Navbar
+   5. Hero
+   6. Buttons
+   7. Cards
+   8. Pagina headers
+   9. Formulieren
+   10. Footer
+   11. Helpers
+   12. Responsive
+========================================================== */
+
+
+/* ==========================================================
+   1. KLEUREN
+========================================================== */
+
+:root{
+
+    --primary:#355845;
+    --primary-dark:#274235;
+
+    --accent:#D62828;
+
+    --dark:#222222;
+
+    --light:#F8F9FA;
+
+    --white:#FFFFFF;
+
+    --gray:#6C757D;
+
+}
+
+
+/* ==========================================================
+   2. ALGEMEEN
+========================================================== */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    background:#ffffff;
+
+    color:#333;
+
+    font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif;
+
+    line-height:1.7;
+
+}
+
+
+/* ==========================================================
+   3. TYPOGRAFIE
+========================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5{
+
+    color:var(--primary);
+
+    font-weight:700;
+
+}
+
+.display-4{
+
+    font-weight:800;
+
+}
+
+.lead{
+
+    font-size:1.2rem;
+
+}
+
+
+/* ==========================================================
+   4. NAVBAR
+========================================================== */
+
+.navbar{
+
+    transition:.3s;
+
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+
+}
+
+.navbar-brand img{
+
+    transition:.3s;
+
+}
+
+.navbar-brand img:hover{
+
+    transform:scale(1.05);
+
+}
+
+.nav-link{
+
+    margin-left:12px;
+
+    font-weight:500;
+
+}
+
+.nav-link:hover{
+
+    color:#ffffff !important;
+
+}
+
+
+/* ==========================================================
+   5. HERO
+========================================================== */
+
+header{
+
+    background:linear-gradient(
+        180deg,
+        #ffffff,
+        #f6f8fa
+    );
+
+}
+
+header img{
+
+    max-width:320px;
+
+}
+
+header .btn{
+
+    margin-top:15px;
+
+}
+
+
+/* ==========================================================
+   6. BUTTONS
+========================================================== */
+
+.btn-success{
+
+    background:var(--primary);
+
+    border:none;
+
+    padding:12px 28px;
+
+    transition:.3s;
+
+}
+
+.btn-success:hover{
+
+    background:var(--primary-dark);
+
+    transform:translateY(-2px);
+
+}
+
+.btn-outline-success{
+
+    border-color:var(--primary);
+
+    color:var(--primary);
+
+}
+
+.btn-outline-success:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+
+/* ==========================================================
+   7. CARDS
+========================================================== */
+
+.card{
+
+    border:none;
+
+    border-radius:14px;
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 15px 30px rgba(0,0,0,.10);
+
+}
+
+.card h3{
+
+    color:var(--primary);
+
+}
+
+
+/* ==========================================================
+   8. PAGINA HEADERS
+========================================================== */
+
+.bg-light{
+
+    background:#F5F7F8 !important;
+
+}
+
+
+/* ==========================================================
+   9. FORMULIEREN
+========================================================== */
+
+.form-control{
+
+    border-radius:8px;
+
+    padding:12px;
+
+}
+
+.form-control:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 .2rem rgba(53,88,69,.20);
+
+}
+
+textarea{
+
+    resize:vertical;
+
+}
+
+
+/* ==========================================================
+   10. FOOTER
+========================================================== */
+
+footer{
+
+    margin-top:60px;
+
+    font-size:.9rem;
+
+}
+
+footer p{
+
+    margin-bottom:5px;
+
+}
+
+
+/* ==========================================================
+   11. HELPERS
+========================================================== */
+
+.shadow-sm{
+
+    box-shadow:0 6px 20px rgba(0,0,0,.08)!important;
+
+}
+
+.rounded{
+
+    border-radius:14px!important;
+
+}
+
+.section{
+
+    padding:80px 0;
+
+}
+
+
+/* ==========================================================
+   12. RESPONSIVE
+========================================================== */
+
+@media (max-width:992px){
+
+    header{
+
+        text-align:center;
+
+    }
+
+    header img{
+
+        margin-top:35px;
+
+        max-width:250px;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    h1{
+
+        font-size:2rem;
+
+    }
+
+    h2{
+
+        font-size:1.6rem;
+
+    }
+
+    .lead{
+
+        font-size:1rem;
+
+    }
+
+    .card{
+
+        margin-bottom:20px;
+
+    }
+
+}
+
+@media (max-width:576px){
+
+    .navbar-brand img{
+
+        height:38px;
+
+    }
+
+}
