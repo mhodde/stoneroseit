@@ -1,278 +1,91 @@
-<!DOCTYPE html>
-<html lang="nl">
-
-<head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Contact | StoneRose IT</title>
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<link rel="stylesheet" href="css/style.css">
-
-</head>
-
-<body>
-
 <!-- ==========================================
-     NAVBAR
+     CONTACTFORMULIER
 ========================================== -->
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+<form id="contactForm" novalidate>
 
-<div class="container">
+    <!-- Naam -->
+    <div class="mb-3">
 
-<a class="navbar-brand" href="index.html">
+        <label for="naam" class="form-label">
+            Naam *
+        </label>
 
-<img src="images/LogoStoneRose.jpg"
-height="45"
-alt="StoneRose IT">
+        <input
+            type="text"
+            class="form-control"
+            id="naam"
+            placeholder="Uw naam"
+            required>
 
-</a>
+    </div>
 
-<button class="navbar-toggler"
-type="button"
-data-bs-toggle="collapse"
-data-bs-target="#mainMenu">
+    <!-- Bedrijf -->
+    <div class="mb-3">
 
-<span class="navbar-toggler-icon"></span>
+        <label for="bedrijf" class="form-label">
+            Bedrijf
+        </label>
 
-</button>
+        <input
+            type="text"
+            class="form-control"
+            id="bedrijf"
+            placeholder="Bedrijfsnaam">
 
-<div class="collapse navbar-collapse"
-id="mainMenu">
+    </div>
 
-<ul class="navbar-nav ms-auto">
+    <!-- Email -->
+    <div class="mb-3">
 
-<li class="nav-item">
+        <label for="email" class="form-label">
+            E-mailadres *
+        </label>
 
-<a class="nav-link"
-href="index.html">
+        <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="naam@bedrijf.nl"
+            required>
 
-Home
+    </div>
 
-</a>
+    <!-- Onderwerp -->
+    <div class="mb-3">
 
-</li>
+        <label for="onderwerp" class="form-label">
+            Onderwerp
+        </label>
 
-<li class="nav-item">
+        <input
+            type="text"
+            class="form-control"
+            id="onderwerp">
 
-<a class="nav-link"
-href="diensten.html">
+    </div>
 
-Diensten
+    <!-- Bericht -->
+    <div class="mb-3">
 
-</a>
+        <label for="bericht" class="form-label">
+            Bericht *
+        </label>
 
-</li>
+        <textarea
+            id="bericht"
+            class="form-control"
+            rows="6"
+            required></textarea>
 
-<li class="nav-item">
+    </div>
 
-<a class="nav-link"
-href="over-ons.html">
+    <button
+        type="submit"
+        class="btn btn-success">
 
-Over ons
+        Versturen
 
-</a>
-
-</li>
-
-<li class="nav-item">
-
-<a class="nav-link active"
-href="contact.html">
-
-Contact
-
-</a>
-
-</li>
-
-</ul>
-
-</div>
-
-</div>
-
-</nav>
-
-<!-- ==========================================
-     HEADER
-========================================== -->
-
-<header class="bg-light py-5 text-center">
-
-<div class="container">
-
-<h1 class="display-4">
-
-Contact
-
-</h1>
-
-<p class="lead">
-
-Heeft u een vraag of wilt u vrijblijvend kennismaken?
-
-</p>
-
-</div>
-
-</header>
-
-<!-- ==========================================
-     CONTACT
-========================================== -->
-
-<section class="container py-5">
-
-<div class="row">
-
-<!-- Formulier -->
-
-<div class="col-lg-8">
-
-<h2>Stuur een bericht</h2>
-
-<form>
-
-<div class="mb-3">
-
-<label class="form-label">Naam</label>
-
-<input type="text"
-class="form-control">
-
-</div>
-
-<div class="mb-3">
-
-<label class="form-label">
-
-Bedrijf
-
-</label>
-
-<input type="text"
-class="form-control">
-
-</div>
-
-<div class="mb-3">
-
-<label class="form-label">
-
-E-mail
-
-</label>
-
-<input type="email"
-class="form-control">
-
-</div>
-
-<div class="mb-3">
-
-<label class="form-label">
-
-Onderwerp
-
-</label>
-
-<input type="text"
-class="form-control">
-
-</div>
-
-<div class="mb-3">
-
-<label class="form-label">
-
-Bericht
-
-</label>
-
-<textarea class="form-control"
-rows="6"></textarea>
-
-</div>
-
-<button class="btn btn-success btn-lg">
-
-Versturen
-
-</button>
+    </button>
 
 </form>
-
-</div>
-
-<!-- Contactgegevens -->
-
-<div class="col-lg-4">
-
-<div class="card shadow">
-
-<div class="card-body">
-
-<h3>StoneRose IT</h3>
-
-<hr>
-
-<p>
-
-<strong>E-mail</strong><br>
-
-stoneroseit@gmail.com
-</p>
-
-<p>
-
-<strong>Telefoon</strong><br>
-
-06-12345678
-
-</p>
-
-<p>
-
-<strong>Werkgebied</strong><br>
-
-Heel Nederland (hybride en remote)
-
-</p>
-
-<p>
-
-<strong>LinkedIn</strong><br>
-
-<a href="https://linkedin.com/in/michaelhodde">www.linkedin.com/in/michaelhodde</a>
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<footer class="bg-dark text-white text-center py-4">
-
-© 2026 StoneRose IT
-
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-
-<script src="js/script.js"></script>
-
-</body>
-
-</html>
