@@ -4,39 +4,44 @@
  script.js
 
  Auteur : ChatGPT
- Versie : 1.0
+
+ Alle JavaScript voor de website.
 
  Inhoud
 
- 1. Pagina geladen
- 2. Navbar schaduw
- 3. Scroll-to-top knop
+ 1. Website geladen
+ 2. Navbar effect
+ 3. Scroll-to-top
  4. Fade-in animatie
- 5. Contactformulier (voorbereiding)
+ 5. Contactformulier
 =========================================================
 */
 
 
 /* ======================================================
-   1. PAGINA GELADEN
+   WEBSITE GELADEN
 ====================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    console.log("StoneRose IT website geladen.");
+    console.log("StoneRose IT geladen.");
+
+    initialiseContactForm();
 
 });
 
 
 /* ======================================================
-   2. NAVBAR EFFECT
+   NAVBAR SCHADUW
 ====================================================== */
 
 window.addEventListener("scroll", () => {
 
     const navbar = document.querySelector(".navbar");
 
-    if (window.scrollY > 40) {
+    if (!navbar) return;
+
+    if (window.scrollY > 30) {
 
         navbar.classList.add("shadow");
 
@@ -50,34 +55,30 @@ window.addEventListener("scroll", () => {
 
 
 /* ======================================================
-   3. SCROLL TO TOP BUTTON
+   SCROLL TO TOP
 ====================================================== */
 
-const topButton = document.createElement("button");
+const scrollButton = document.createElement("button");
 
-topButton.innerHTML = "▲";
+scrollButton.id = "scrollTop";
 
-topButton.id = "scrollTop";
+scrollButton.innerHTML = "▲";
 
-document.body.appendChild(topButton);
-
+document.body.appendChild(scrollButton);
 
 window.addEventListener("scroll", () => {
 
-    if (window.scrollY > 250) {
+    scrollButton.style.display =
 
-        topButton.style.display = "block";
+        window.scrollY > 250
 
-    } else {
+        ? "block"
 
-        topButton.style.display = "none";
-
-    }
+        : "none";
 
 });
 
-
-topButton.addEventListener("click", () => {
+scrollButton.addEventListener("click", () => {
 
     window.scrollTo({
 
@@ -91,10 +92,10 @@ topButton.addEventListener("click", () => {
 
 
 /* ======================================================
-   4. FADE-IN BIJ SCROLLEN
+   FADE-IN ANIMATIE
 ====================================================== */
 
-const observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver(entries => {
 
     entries.forEach(entry => {
 
@@ -118,31 +119,82 @@ document.querySelectorAll(".card").forEach(card => {
 
 
 /* ======================================================
-   5. CONTACTFORMULIER
+   CONTACTFORMULIER
 ====================================================== */
 
-/*
-Later kun je hier validatie toevoegen.
+function initialiseContactForm() {
 
-Bijvoorbeeld:
+    // Zoek het formulier
 
-- verplichte velden
-- email controle
-- Formspree
-- Netlify Forms
+    const form = document.getElementById("contactForm");
 
-*/
+    // Niet op iedere pagina aanwezig
 
+    if (!form) return;
 
-const form = document.querySelector("form");
+    // Submit event
 
-if (form) {
+    form.addEventListener("submit", function (event) {
 
-    form.addEventListener("submit", function (e) {
+        // Voorkom pagina refresh
 
-        e.preventDefault();
+        event.preventDefault();
 
-        alert("Bedankt! Het contactformulier is nog niet gekoppeld.");
+        // Gegevens ophalen
+
+        const naam = document.getElementById("naam").value.trim();
+
+        const bedrijf = document.getElementById("bedrijf").value.trim();
+
+        const email = document.getElementById("email").value.trim();
+
+        const onderwerp = document.getElementById("onderwerp").value.trim();
+
+        const bericht = document.getElementById("bericht").value.trim();
+
+        // Simpele validatie
+
+        if (naam === "") {
+
+            alert("Vul uw naam in.");
+
+            return;
+
+        }
+
+        if (email === "") {
+
+            alert("Vul een e-mailadres in.");
+
+            return;
+
+        }
+
+        if (bericht === "") {
+
+            alert("Vul een bericht in.");
+
+            return;
+
+        }
+
+        // Debug (later verwijderen)
+
+        console.log("Naam:", naam);
+
+        console.log("Bedrijf:", bedrijf);
+
+        console.log("Email:", email);
+
+        console.log("Onderwerp:", onderwerp);
+
+        console.log("Bericht:", bericht);
+
+        alert("Bedankt voor uw bericht! Het formulier is nog niet gekoppeld aan een mailservice.");
+
+        // Formulier leegmaken
+
+        form.reset();
 
     });
 
