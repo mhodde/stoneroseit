@@ -191,7 +191,7 @@ function initialiseContactForm() {
         console.log("Bericht:", bericht);
 
         //alert("Bedankt voor uw bericht! Het formulier is nog niet gekoppeld aan een mailservice.");
-        fetch("https://script.google.com/macros/s/AKfycbwOacPodYBEppLVYvC4d1BF9KfnP5sV6SNtWJFBMq5AsWC8Z6C3uaE87b4k2mBJVubw/exec", {
+        fetch("https://script.google.com/macros/s/AKfycbyAvVzVW4U463EGVS_ipurxRPdDPZvfL7gYBiZTcQY-VGBbms_zRx7Eu2qny_qfv-dp/exec", {
 
             method: "POST",
             headers: {
