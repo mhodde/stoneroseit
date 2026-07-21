@@ -181,7 +181,7 @@ function initialiseContactForm() {
         data.append("bericht", bericht);
 
 
-        fetch("HIER_JOUW_WEBAPP_URL", {
+        fetch("https://script.google.com/macros/s/AKfycbyAvVzVW4U463EGVS_ipurxRPdDPZvfL7gYBiZTcQY-VGBbms_zRx7Eu2qny_qfv-dp/exec", {
 
             method: "POST",
 
