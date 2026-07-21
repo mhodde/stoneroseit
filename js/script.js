@@ -124,23 +124,13 @@ document.querySelectorAll(".card").forEach(card => {
 
 function initialiseContactForm() {
 
-    // Zoek het formulier
-
     const form = document.getElementById("contactForm");
-
-    // Niet op iedere pagina aanwezig
 
     if (!form) return;
 
-    // Submit event
-
     form.addEventListener("submit", function (event) {
 
-        // Voorkom pagina refresh
-
         event.preventDefault();
-
-        // Gegevens ophalen
 
         const naam = document.getElementById("naam").value.trim();
 
@@ -152,7 +142,6 @@ function initialiseContactForm() {
 
         const bericht = document.getElementById("bericht").value.trim();
 
-        // Simpele validatie
 
         if (naam === "") {
 
@@ -164,7 +153,7 @@ function initialiseContactForm() {
 
         if (email === "") {
 
-            alert("Vul een e-mailadres in.");
+            alert("Vul uw e-mailadres in.");
 
             return;
 
@@ -178,61 +167,53 @@ function initialiseContactForm() {
 
         }
 
-        // Debug (later verwijderen)
 
-        console.log("Naam:", naam);
+        const data = new URLSearchParams();
 
-        console.log("Bedrijf:", bedrijf);
+        data.append("naam", naam);
 
-        console.log("Email:", email);
+        data.append("bedrijf", bedrijf);
 
-        console.log("Onderwerp:", onderwerp);
+        data.append("email", email);
 
-        console.log("Bericht:", bericht);
+        data.append("onderwerp", onderwerp);
 
-        //alert("Bedankt voor uw bericht! Het formulier is nog niet gekoppeld aan een mailservice.");
-        fetch("https://script.google.com/macros/s/AKfycbyAvVzVW4U463EGVS_ipurxRPdDPZvfL7gYBiZTcQY-VGBbms_zRx7Eu2qny_qfv-dp/exec", {
+        data.append("bericht", bericht);
+
+
+        fetch("HIER_JOUW_WEBAPP_URL", {
 
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
 
-            body: JSON.stringify({
-
-            naam,
-
-            bedrijf,
-
-            email,
-
-            onderwerp,
-
-            bericht
-
-            })
+            body: data
 
         })
+
         .then(response => response.text())
+
         .then(result => {
+
+            console.log(result);
 
             alert("Uw bericht is succesvol verzonden.");
 
             form.reset();
 
         })
-        .catch(error => {
 
-            alert("Er is een fout opgetreden.");
+        .catch(error => {
 
             console.error(error);
 
+            alert("Er is een fout opgetreden.");
+
         });
-
-        // Formulier leegmaken
-
-        form.reset();
 
     });
 
 }
+// Formulier leegmaken
+
+form.reset();
+
+ 
