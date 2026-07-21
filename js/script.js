@@ -190,7 +190,44 @@ function initialiseContactForm() {
 
         console.log("Bericht:", bericht);
 
-        alert("Bedankt voor uw bericht! Het formulier is nog niet gekoppeld aan een mailservice.");
+        //alert("Bedankt voor uw bericht! Het formulier is nog niet gekoppeld aan een mailservice.");
+        fetch("https://script.google.com/macros/s/AKfycbwOacPodYBEppLVYvC4d1BF9KfnP5sV6SNtWJFBMq5AsWC8Z6C3uaE87b4k2mBJVubw/exec", {
+
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+
+            naam,
+
+            bedrijf,
+
+            email,
+
+            onderwerp,
+
+            bericht
+
+            })
+
+        })
+        .then(response => response.text())
+        .then(result => {
+
+            alert("Uw bericht is succesvol verzonden.");
+
+            form.reset();
+
+        })
+        .catch(error => {
+
+            alert("Er is een fout opgetreden.");
+
+            console.error(error);
+
+        });
 
         // Formulier leegmaken
 
