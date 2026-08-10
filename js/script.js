@@ -121,6 +121,10 @@ document.querySelectorAll(".card").forEach(card => {
 /* ======================================================
    CONTACTFORMULIER
 ====================================================== */
+function isEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
 
 function initialiseContactForm() {
 
@@ -150,14 +154,23 @@ function initialiseContactForm() {
             return;
 
         }
+        let validMail =isEmail(email);
 
-        if (email === "") {
+        if (email === "" ) {
 
             alert("Vul uw e-mailadres in.");
 
             return;
 
         }
+        
+        if (!validMail) {
+
+            alert("Vul een geldig e-mailadres in.");
+
+            return;
+        }
+
 
         if (bericht === "") {
 
