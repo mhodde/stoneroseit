@@ -233,6 +233,12 @@ header .btn{
 
 }
 
+.responsive-video {
+    display: block;
+    width: 700px;
+    max-width: 100%;
+    height: auto;
+}
 
 /* ==========================================================
    8. PAGINA HEADERS
