@@ -136,6 +136,14 @@ h5{
 
 }
 
+.secret-menu {
+       display: none;
+   }
+
+ body.secret-mode .secret-menu {
+       display: block;
+   }
+
 
 /* ==========================================================
    5. HERO

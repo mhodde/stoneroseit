@@ -34,13 +34,9 @@
 
         <div class="container">
 
-            <a class="navbar-brand" href="index.html">
-
-                <img src="images/LogoStoneRose.jpg"
-                    alt="StoneRose IT logo"
-                    height="45">
-
-            </a>
+ 			<a class="navbar-brand" href="#" id="secretToggle" aria-label="Extra menu tonen"> 
+			<img src="images/LogoStoneRose.jpg" alt="StoneRose IT logo" height="45"> 
+			</a>
 
             <button class="navbar-toggler"
                 type="button"
@@ -69,6 +65,10 @@
 
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <!-- Verborgen menu -->
+                   <li class="nav-item secret-menu">
+                        <a class="nav-link" href="verhalen.html">Verhalen</a>
                     </li>
 
                 </ul>
@@ -245,7 +245,14 @@
      <!-- Cloudflare Web Analytics -->
     <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2c36251ab7f340a5b40b2f8489cf645c"}'></script>
     <!-- End Cloudflare Web Analytics -->
+<script>
+    document.getElementById('secretToggle')
+        .addEventListener('dblclick', function (event) {
+            event.preventDefault();
 
+            document.body.classList.toggle('secret-mode');
+        });
+</script>
 </body>
 
 </html>
